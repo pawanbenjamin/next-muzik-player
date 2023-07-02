@@ -9,9 +9,10 @@ export async function addToPlaylist(playlistId: number, songId: number) {
     },
     data: {
       songs: {
-        set: [{ id: songId }]
+        connect: [{ id: songId }]
       }
     }
   });
+
   revalidatePath("/player");
 }

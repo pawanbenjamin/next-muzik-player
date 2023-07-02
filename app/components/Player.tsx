@@ -8,6 +8,10 @@ export default function Player() {
   const { activeSongs, activeSong, changeActiveSong } = useStore();
   const soundRef = useRef(null);
   const [playing, setPlaying] = useState(true);
+  const [shuffle, setShuffle] = useState(false);
+  const [index, setIndex] = useState(
+    activeSongs.findIndex((s: any) => s.id === activeSong.id)
+  );
 
   if (!activeSong) {
     return null;
@@ -27,6 +31,16 @@ export default function Player() {
     // setDuration(songDuration);
   };
 
+  const onShuffle = () => {
+    setShuffle((state) => !state);
+  };
+
+  const prevSong = () => {
+    setIndex((state) => {
+      return state ? state - 1 : activeSongs.length - 1;
+    });
+  };
+
   return (
     <div className="bg-red-200">
       <ReactHowler
@@ -37,8 +51,8 @@ export default function Player() {
         onEnd={onEnd}
       />
       <div>
-        <button>🔀</button>
-        <button>⬅️</button>
+        <button onClick={() => onShuffle()}>🔀</button>
+        <button onClick={prevSong}>⬅️</button>
         {playing ? <button>⏸️</button> : <button>▶️</button>}
         <button>➡️</button>
         <button>🔂</button>
