@@ -39,7 +39,7 @@ export default async function Sidebar() {
     <aside className="bg-green-200">
       <ul>
         <Link href={"/player/profile"}>
-          <li>Home</li>
+          <li>🏠 Home</li>
         </Link>
         {playlists?.map((playlist: any) => {
           return (
@@ -49,7 +49,7 @@ export default async function Sidebar() {
           );
         })}
         <form action={createPlaylist}>
-          <button>Create Playlist</button>
+          <button>Create New Playlist ➕</button>
         </form>
       </ul>
     </aside>

@@ -7,7 +7,7 @@ export default async function Nav() {
   const user: User | JwtPayload | null = useMe();
   return (
     <nav>
-      <p>Welcome ! {user?.firstName}</p>
+      <p>🙏🏽 Welcome ! {user?.firstName}</p>
       <LogoutButton />
     </nav>
   );
