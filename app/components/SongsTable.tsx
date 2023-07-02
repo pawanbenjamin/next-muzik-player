@@ -4,10 +4,12 @@ import useStore from "../lib/hooks/useStore";
 import { addToPlaylist } from "../lib/serverActions";
 import type { Song } from "../lib/store";
 
+// Songs will be passed in, from a Server Component
 export function SongsTable({ songs }: { songs: Song[] }) {
   const [showPlaylists, setShowPlaylists] = useState<boolean>(false);
   const [playlists, setPlaylists] = useState<[]>([]);
 
+  // To fetch user playlists to possible add song to
   useEffect(() => {
     async function fetchPlaylists() {
       const res = await fetch("/api/playlists");

@@ -25,19 +25,14 @@ export type Store = {
   changeActiveSongs: Action<{}, any>;
   getMe: Thunk<{}, any>;
   user: User;
-  error: any;
-  setError: Action<{}, any>;
   setUser: Action<{}, any>;
 };
 
 export const store = createStore<Store>({
-  error: null,
   user: null,
   activeSongs: [],
   activeSong: null,
-  setError: action((state, payload) => {
-    state.error = payload;
-  }),
+
   setUser: action((state, payload) => {
     state.user = payload;
   }),
@@ -51,7 +46,7 @@ export const store = createStore<Store>({
   getMe: thunk(async (actions, payload) => {
     const response = await fetch("/api/auth/me");
     if (!response.ok) {
-      actions.setError({ message: "error fetching me" });
+      console.error("Error fetching loged in user");
     } else {
       const { user } = await response.json();
       actions.setUser(user);
