@@ -1,6 +1,6 @@
 import "./globals.css";
 export const metadata = {
-  title: "Next Music App",
+  title: "Next Muzik Player",
   description: "A Simplified Spotify Clone"
 };
 
