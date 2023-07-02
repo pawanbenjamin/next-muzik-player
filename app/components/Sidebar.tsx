@@ -3,7 +3,7 @@ import useMe from "../lib/hooks/useMe";
 import prisma from "../lib/prisma";
 import { revalidatePath } from "next/cache";
 
-import type { Song, User } from "../lib/store";
+import type { User } from "../lib/store";
 import { JwtPayload } from "jsonwebtoken";
 
 async function fetchPlaylists() {
@@ -20,20 +20,20 @@ async function fetchPlaylists() {
   }
 }
 
+async function createPlaylist() {
+  "use server";
+  const user: User | JwtPayload | null = useMe();
+  await prisma.playlist.create({
+    data: {
+      name: `Playlist ${Math.random().toString()}`,
+      userId: user?.id
+    }
+  });
+  revalidatePath("/player");
+}
+
 export default async function Sidebar() {
   let playlists = await fetchPlaylists();
-
-  async function createPlaylist() {
-    "use server";
-    const user: User | JwtPayload | null = useMe();
-    const playlist = await prisma.playlist.create({
-      data: {
-        name: `Playlist ${Math.random().toString()}`,
-        userId: user?.id
-      }
-    });
-    revalidatePath("/player");
-  }
 
   return (
     <aside className="bg-green-200">

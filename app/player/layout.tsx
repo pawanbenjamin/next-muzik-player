@@ -11,13 +11,10 @@ type Props = {
 export default function DashboardLayout({ children }: Props) {
   return (
     <div>
-      {/* Wrap sidebar and player in store provider???? */}
-      <EZStoreProvider>
-        <Nav />
-        <Sidebar />
-        {children}
-        <Player />
-      </EZStoreProvider>
+      <Nav />
+      <Sidebar />
+      {children}
+      <Player />
     </div>
   );
 }
