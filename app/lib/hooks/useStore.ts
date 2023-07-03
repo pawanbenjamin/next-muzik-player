@@ -1,6 +1,5 @@
 "use client";
 import { useStoreActions, useStoreState } from "easy-peasy";
-import type { Store } from "../store";
 
 export default function useStore() {
   // @ts-ignore

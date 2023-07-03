@@ -34,6 +34,7 @@
     "@types/bcrypt": "^5.0.0",
     "@types/jsonwebtoken": "^9.0.2",
     "@types/react-howler": "^5.2.0",
+    "daisyui": "^3.1.7",
     "prisma": "^4.15.0"
   }
 }
