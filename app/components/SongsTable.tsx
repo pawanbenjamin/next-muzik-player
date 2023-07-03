@@ -34,7 +34,7 @@ export function SongsTable({ songs }: { songs: Song[] }) {
   }
 
   return (
-    <div className="bg-green-500">
+    <div className="">
       <button onClick={handlePlay}>Play Button!!!</button>
       {songs.map((song: any) => {
         return (

@@ -18,7 +18,7 @@ export default async function Playlist({ params }: Props) {
   });
 
   return (
-    <div className="bg-purple-200">
+    <div className="">
       <ul>
         <SongsTable songs={playlist?.songs} />
       </ul>

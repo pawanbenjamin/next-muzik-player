@@ -47,48 +47,56 @@ export default function Register() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
-      <form onSubmit={onSubmit}>
-        <label>
-          First Name:{" "}
-          <input
-            type="text"
-            name="firstName"
-            value={formValues.firstName}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Last Name:{" "}
-          <input
-            type="text"
-            name="lastName"
-            value={formValues.lastName}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Email:{" "}
-          <input
-            type="text"
-            name="email"
-            value={formValues.email}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          Password:{" "}
-          <input
-            type="password"
-            name="password"
-            value={formValues.password}
-            onChange={handleChange}
-          />
-        </label>
-        <button disabled={loading}>
-          {loading ? "loading..." : "Register"}
-        </button>
-      </form>
-      <Link href={"/signin"}>🤝 To Sign In</Link>
+      <div className="flex flex-col justify-center items-center form-control gap-6">
+        <form className="form-control" onSubmit={onSubmit}>
+          <label className="input-group mb-4 w-fit">
+            <span>First Name: </span>
+            <input
+              className="input"
+              type="text"
+              name="firstName"
+              value={formValues.firstName}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="input-group mb-4 w-fit">
+            <span>Last Name: </span>
+            <input
+              className="input"
+              type="text"
+              name="lastName"
+              value={formValues.lastName}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="input-group mb-4 w-fit">
+            <span>Email: </span>
+            <input
+              className="input"
+              type="text"
+              name="email"
+              value={formValues.email}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="input-group mb-4 w-fit">
+            <span>Password: </span>
+            <input
+              className="input"
+              type="password"
+              name="password"
+              value={formValues.password}
+              onChange={handleChange}
+            />
+          </label>
+          <button className="btn btn-primary" disabled={loading}>
+            {loading ? "loading..." : "Register"}
+          </button>
+        </form>
+        <Link className="link" href={"/signin"}>
+          🤝 To Signin
+        </Link>
+      </div>
     </div>
   );
 }
