@@ -34,7 +34,7 @@ export default function Player() {
 
     if (playing && !isSeeking) {
       const f = () => {
-        setSeek(soundRef.current.seek());
+        setSeek(soundRef?.current?.seek());
         timerId = requestAnimationFrame(f);
       };
 
@@ -55,8 +55,10 @@ export default function Player() {
   };
 
   const onSeek = (e) => {
+    setIsSeeking(true);
     setSeek(parseFloat(e.target.value));
     soundRef.current.seek(parseFloat(e.target.value));
+    setIsSeeking(false);
   };
 
   const onLoad = () => {
@@ -122,8 +124,6 @@ export default function Player() {
         max={duration ? +duration.toFixed(2) : 0}
         value={seek}
         onChange={onSeek}
-        onChangeStart={() => setIsSeeking(true)}
-        onChangeEnd={() => setIsSeeking(false)}
       />
     </div>
   );
