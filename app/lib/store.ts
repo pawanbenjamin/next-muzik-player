@@ -2,31 +2,31 @@
 import { createStore, action, thunk } from "easy-peasy";
 import { Action, StateMapper, FilterActionTypes, Thunk } from "easy-peasy";
 
-export type User = {
+export interface User {
   id: string;
   email: string;
   firstName: string;
   lastName: string;
   iat: number;
-};
+}
 
-export type Song = {
+export interface Song {
   artistId: number;
   duration: number;
   id: number;
   name: string;
   url: string;
-};
+}
 
-export type Store = {
+export interface Store {
   activeSong: Song | null;
-  changeActiveSong: Action<{}, any>;
+  changeActiveSong: Action<Store, Song>;
   activeSongs: Song[] | null;
-  changeActiveSongs: Action<{}, any>;
-  getMe: Thunk<{}, any>;
+  changeActiveSongs: Action<Store, Song[]>;
+  getMe: Thunk<Store>;
   user: User | null;
-  setUser: Action<{}, any>;
-};
+  setUser: Action<Store, User>;
+}
 
 export const store = createStore<Store>({
   user: null,
@@ -36,10 +36,10 @@ export const store = createStore<Store>({
   setUser: action((state, payload) => {
     state.user = payload;
   }),
-  changeActiveSongs: action((state: any, payload) => {
+  changeActiveSongs: action((state, payload) => {
     state.activeSongs = payload;
   }),
-  changeActiveSong: action((state: any, payload) => {
+  changeActiveSong: action((state, payload) => {
     console.log("payload", payload);
     state.activeSong = payload;
   }),

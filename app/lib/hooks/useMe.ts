@@ -8,7 +8,7 @@ export default function useMe(): User | JwtPayload {
   if (!nextCookie) {
     return null;
   }
-  // @ts-ignore
+
   const user: JwtPayload = jwt.verify(nextCookie.value, "super secret");
   console.log("TYPE OF USER: ", typeof user);
   return user;
