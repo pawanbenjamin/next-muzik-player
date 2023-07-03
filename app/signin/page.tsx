@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -45,26 +45,37 @@ export default function Login() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <label>
-        Email:{" "}
-        <input
-          type="text"
-          name="email"
-          value={formValues.email}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Password:{" "}
-        <input
-          type="password"
-          name="password"
-          value={formValues.password}
-          onChange={handleChange}
-        />
-      </label>
-      <button disabled={loading}>{loading ? "loading..." : "Sign In"}</button>
-    </form>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <div className="flex flex-col justify-center items-center form-control gap-6">
+        <form className="form-control" onSubmit={onSubmit}>
+          <label className="input-group mb-4 w-fit">
+            <span className="">Email: </span>
+            <input
+              className="input"
+              type="text"
+              name="email"
+              value={formValues.email}
+              onChange={handleChange}
+            />
+          </label>
+          <label className="input-group mb-4">
+            <span className="">Password: </span>
+            <input
+              className="input"
+              type="password"
+              name="password"
+              value={formValues.password}
+              onChange={handleChange}
+            />
+          </label>
+          <button className="btn btn-primary" disabled={loading}>
+            {loading ? "loading..." : "Sign In"}
+          </button>
+        </form>
+        <Link className="link" href={"/register"}>
+          ✍🏽 To Register
+        </Link>
+      </div>
+    </div>
   );
 }

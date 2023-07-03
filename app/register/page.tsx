@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -46,44 +46,49 @@ export default function Register() {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <label>
-        First Name:{" "}
-        <input
-          type="text"
-          name="firstName"
-          value={formValues.firstName}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Last Name:{" "}
-        <input
-          type="text"
-          name="lastName"
-          value={formValues.lastName}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Email:{" "}
-        <input
-          type="text"
-          name="email"
-          value={formValues.email}
-          onChange={handleChange}
-        />
-      </label>
-      <label>
-        Password:{" "}
-        <input
-          type="password"
-          name="password"
-          value={formValues.password}
-          onChange={handleChange}
-        />
-      </label>
-      <button disabled={loading}>{loading ? "loading..." : "Register"}</button>
-    </form>
+    <div className="flex flex-col justify-center items-center h-screen">
+      <form onSubmit={onSubmit}>
+        <label>
+          First Name:{" "}
+          <input
+            type="text"
+            name="firstName"
+            value={formValues.firstName}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Last Name:{" "}
+          <input
+            type="text"
+            name="lastName"
+            value={formValues.lastName}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Email:{" "}
+          <input
+            type="text"
+            name="email"
+            value={formValues.email}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Password:{" "}
+          <input
+            type="password"
+            name="password"
+            value={formValues.password}
+            onChange={handleChange}
+          />
+        </label>
+        <button disabled={loading}>
+          {loading ? "loading..." : "Register"}
+        </button>
+      </form>
+      <Link href={"/signin"}>🤝 To Sign In</Link>
+    </div>
   );
 }
