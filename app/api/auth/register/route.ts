@@ -1,7 +1,7 @@
 import prisma from "@/app/lib/prisma";
 import bcrypt from "bcrypt";
 import { cookies } from "next/headers";
-import jwt from "jsonwebtoken";
+import { signUserToken } from "@/app/lib/tokenHelpers";
 import { NextResponse } from "next/server";
 const saltRounds = 10;
 
@@ -25,9 +25,7 @@ export async function POST(req: Request) {
       }
     });
 
-    delete user.password;
-    // Create JWT
-    const token = jwt.sign(user, "super secret");
+    const token = signUserToken(user);
 
     // Create HTTP only Cookie and Attach to Response
     cookies().set({

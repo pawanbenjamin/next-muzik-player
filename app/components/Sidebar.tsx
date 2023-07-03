@@ -36,7 +36,7 @@ export default async function Sidebar() {
   let playlists = await fetchPlaylists();
 
   return (
-    <aside className="bg-green-200">
+    <aside className="">
       <ul>
         <Link href={"/player/profile"}>
           <li>🏠 Home</li>
