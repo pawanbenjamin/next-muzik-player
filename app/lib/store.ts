@@ -8,7 +8,7 @@ export type User = {
   firstName: string;
   lastName: string;
   iat: number;
-} | null;
+};
 
 export type Song = {
   artistId: number;
@@ -16,15 +16,15 @@ export type Song = {
   id: number;
   name: string;
   url: string;
-} | null;
+};
 
 export type Store = {
-  activeSong: Song;
+  activeSong: Song | null;
   changeActiveSong: Action<{}, any>;
-  activeSongs: Song[];
+  activeSongs: Song[] | null;
   changeActiveSongs: Action<{}, any>;
   getMe: Thunk<{}, any>;
-  user: User;
+  user: User | null;
   setUser: Action<{}, any>;
 };
 
@@ -51,5 +51,5 @@ export const store = createStore<Store>({
       const { user } = await response.json();
       actions.setUser(user);
     }
-  })
+  }),
 });
