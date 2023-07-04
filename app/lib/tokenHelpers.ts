@@ -8,7 +8,7 @@ const userTokenSchema = z.object({
   lastName: z.string()
 });
 
-type UserToken = z.infer<typeof userTokenSchema>;
+export type UserToken = z.infer<typeof userTokenSchema>;
 
 export function signUserToken(payload: UserToken) {
   const token = jwt.sign(payload, "super secret");

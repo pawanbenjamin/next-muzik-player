@@ -1,15 +1,14 @@
 import { cookies } from "next/headers";
-import jwt, { JwtPayload } from "jsonwebtoken";
+import type { UserToken } from "../tokenHelpers";
+import { parseUserToken } from "../tokenHelpers";
 
-import type { Song, User } from "../store";
-
-export default function useMe(): User | JwtPayload {
+export default function useMe(): UserToken | null {
   const nextCookie = cookies().get("next-muzik-player");
   if (!nextCookie) {
     return null;
   }
 
-  const user: JwtPayload = jwt.verify(nextCookie.value, "super secret");
+  const user = parseUserToken(nextCookie?.value);
   console.log("TYPE OF USER: ", typeof user);
   return user;
 }
