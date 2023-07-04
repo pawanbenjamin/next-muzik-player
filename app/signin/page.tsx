@@ -47,10 +47,10 @@ export default function Login() {
   return (
     <div className="flex flex-col justify-center items-center h-screen">
       <div className="flex flex-col justify-center items-center form-control gap-6">
-        <form className="form-control" onSubmit={onSubmit}>
-          <label className="input-group mb-4 w-fit">
-            <span className="">Email: </span>
+        <form className="flex flex-col w-96" onSubmit={onSubmit}>
+          <label className="input mb-4">
             <input
+              placeholder="email"
               className="input"
               type="text"
               name="email"
@@ -58,9 +58,9 @@ export default function Login() {
               onChange={handleChange}
             />
           </label>
-          <label className="input-group mb-4">
-            <span className="">Password: </span>
+          <label className="input mb-4">
             <input
+              placeholder="password"
               className="input"
               type="password"
               name="password"

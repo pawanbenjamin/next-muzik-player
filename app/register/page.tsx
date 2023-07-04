@@ -47,11 +47,11 @@ export default function Register() {
 
   return (
     <div className="flex flex-col justify-center items-center h-screen">
-      <div className="flex flex-col justify-center items-center form-control gap-6">
-        <form className="form-control" onSubmit={onSubmit}>
-          <label className="input-group mb-4 w-fit">
-            <span>First Name: </span>
+      <div className="flex flex-col items-center gap-6">
+        <form className="flex flex-col w-96" onSubmit={onSubmit}>
+          <label className="input mb-4">
             <input
+              placeholder="first name"
               className="input"
               type="text"
               name="firstName"
@@ -59,9 +59,9 @@ export default function Register() {
               onChange={handleChange}
             />
           </label>
-          <label className="input-group mb-4 w-fit">
-            <span>Last Name: </span>
+          <label className="input mb-4">
             <input
+              placeholder="last name"
               className="input"
               type="text"
               name="lastName"
@@ -69,9 +69,9 @@ export default function Register() {
               onChange={handleChange}
             />
           </label>
-          <label className="input-group mb-4 w-fit">
-            <span>Email: </span>
+          <label className="input mb-4">
             <input
+              placeholder="email"
               className="input"
               type="text"
               name="email"
@@ -79,9 +79,9 @@ export default function Register() {
               onChange={handleChange}
             />
           </label>
-          <label className="input-group mb-4 w-fit">
-            <span>Password: </span>
+          <label className="input mb-4">
             <input
+              placeholder="password"
               className="input"
               type="password"
               name="password"
