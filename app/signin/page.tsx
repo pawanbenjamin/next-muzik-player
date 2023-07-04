@@ -47,7 +47,7 @@ export default function Login() {
   return (
     <div className="flex flex-col justify-center items-center h-screen">
       <div className="flex flex-col justify-center items-center form-control gap-6">
-        <form className="flex flex-col w-96" onSubmit={onSubmit}>
+        <form className="font-mono flex flex-col w-96" onSubmit={onSubmit}>
           <label className="input mb-4">
             <input
               placeholder="email"
@@ -68,7 +68,7 @@ export default function Login() {
               onChange={handleChange}
             />
           </label>
-          <button className="font-mono" disabled={loading}>
+          <button className="font-mono m-2" disabled={loading}>
             {loading ? "loading..." : "Sign In"}
           </button>
         </form>

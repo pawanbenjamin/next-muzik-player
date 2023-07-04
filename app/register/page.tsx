@@ -17,6 +17,12 @@ export default function Register() {
     e.preventDefault();
     setLoading(true);
 
+    if (Object.values(formValues).includes("")) {
+      alert("asdfasdf");
+      setLoading(false);
+      return;
+    }
+
     try {
       const res = await fetch("/api/auth/register", {
         method: "POST",
@@ -89,7 +95,7 @@ export default function Register() {
               onChange={handleChange}
             />
           </label>
-          <button className="font-mono" disabled={loading}>
+          <button className="font-mono m-2" disabled={loading}>
             {loading ? "loading..." : "register"}
           </button>
         </form>

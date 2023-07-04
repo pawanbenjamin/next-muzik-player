@@ -5,7 +5,7 @@ export default async function Home() {
     <main className="font-mono flex flex-col justify-center items-center h-screen">
       <section className="flex flex-col items-center text-lg p-20">
         <h1 className="font-bold text-7xl">
-          welcome to 🎵
+          🎵 welcome to pb's
           <br />
           next muzik player
         </h1>

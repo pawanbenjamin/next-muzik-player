@@ -30,24 +30,28 @@ export default function Player() {
   }, [index, changeActiveSong, activeSongs]);
 
   useEffect(() => {
-    let timerId;
+    let timerId: number | undefined;
 
     if (playing && !isSeeking) {
       const f = () => {
+        //@ts-ignore
         setSeek(soundRef?.current?.seek());
         timerId = requestAnimationFrame(f);
       };
 
       timerId = requestAnimationFrame(f);
       // When component unmounts (cleanup)
-      return () => cancelAnimationFrame(timerId);
+      return () => cancelAnimationFrame(timerId as number);
     }
-    cancelAnimationFrame(timerId);
+    if (timerId !== undefined) {
+      cancelAnimationFrame(timerId);
+    }
   }, [playing, isSeeking]);
 
   const onEnd = () => {
     if (repeatRef.current) {
       setSeek(0);
+      //@ts-ignore
       soundRef.current.seek(0);
     } else {
       nextSong();
@@ -57,11 +61,13 @@ export default function Player() {
   const onSeek = (e) => {
     setIsSeeking(true);
     setSeek(parseFloat(e.target.value));
+    //@ts-ignore
     soundRef.current.seek(parseFloat(e.target.value));
     setIsSeeking(false);
   };
 
   const onLoad = () => {
+    //@ts-ignore
     const songDuration = soundRef.current.duration();
     setDuration(songDuration);
   };
