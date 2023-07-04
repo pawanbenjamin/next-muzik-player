@@ -48,7 +48,7 @@ export default function Register() {
   return (
     <div className="flex flex-col justify-center items-center h-screen">
       <div className="flex flex-col items-center gap-6">
-        <form className="flex flex-col w-96" onSubmit={onSubmit}>
+        <form className="font-mono flex flex-col w-96" onSubmit={onSubmit}>
           <label className="input mb-4">
             <input
               placeholder="first name"
@@ -89,12 +89,12 @@ export default function Register() {
               onChange={handleChange}
             />
           </label>
-          <button className="btn btn-primary" disabled={loading}>
-            {loading ? "loading..." : "Register"}
+          <button className="font-mono" disabled={loading}>
+            {loading ? "loading..." : "register"}
           </button>
         </form>
-        <Link className="link" href={"/signin"}>
-          🤝 To Signin
+        <Link className="font-mono link" href={"/signin"}>
+          🤝 to signin
         </Link>
       </div>
     </div>

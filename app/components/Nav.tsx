@@ -20,7 +20,7 @@ export default async function Nav() {
             clipRule="evenodd"
           />
         </svg>
-        Hello, {user?.firstName}.{" "}
+        hello, {user?.firstName}.{" "}
       </div>
       <LogoutButton />
     </nav>

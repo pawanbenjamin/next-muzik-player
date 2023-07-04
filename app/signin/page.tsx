@@ -68,7 +68,7 @@ export default function Login() {
               onChange={handleChange}
             />
           </label>
-          <button className="btn btn-primary" disabled={loading}>
+          <button className="font-mono" disabled={loading}>
             {loading ? "loading..." : "Sign In"}
           </button>
         </form>

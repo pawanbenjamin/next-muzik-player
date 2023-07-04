@@ -6,7 +6,7 @@ export default async function Profile() {
 
   return (
     <div className="bg-primary p-5">
-      <h1 className="text-3xl">Discover</h1>
+      <h1 className="text-3xl">discover </h1>
       <Artists />
     </div>
   );

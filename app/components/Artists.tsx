@@ -5,8 +5,8 @@ export default async function Artists() {
   const artists = await prisma.artist.findMany({});
 
   return (
-    <div>
-      <h3 className="text-2xl">Artists</h3>
+    <div className="m-4">
+      <h3 className="text-2xl">artists</h3>
       <ul className="flex ">
         {artists.map((artist) => {
           return (
