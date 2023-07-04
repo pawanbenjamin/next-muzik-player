@@ -60,7 +60,7 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
             <div className="flex justify-end">
               <details className="dropdown">
                 <summary>+</summary>
-                <ul className="dropdown-content bg-neutral z-10 p-5 w-max">
+                <ul className="dropdown-content bg-neutral z-10 p-5 w-max overflow-auto h-36">
                   {playlists.map((playlist: any) => {
                     return (
                       <li
