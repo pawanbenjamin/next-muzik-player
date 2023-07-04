@@ -22,12 +22,13 @@ export function LogoutButton() {
   const router = useRouter();
   return (
     <button
+      className="btn btn-neutral"
       onClick={async () => {
         await logOut();
         router.push("/");
       }}
     >
-      Sign Out
+      Sign Out 🚪
     </button>
   );
 }

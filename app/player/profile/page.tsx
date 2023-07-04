@@ -5,8 +5,8 @@ export default async function Profile() {
   const user = useMe();
 
   return (
-    <div className="">
-      <p>Welcome to Your Profile Page {JSON.stringify(user, null, 2)}!</p>
+    <div className="bg-primary p-5">
+      <h1 className="text-3xl">Discover</h1>
       <Artists />
     </div>
   );

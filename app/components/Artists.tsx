@@ -6,14 +6,16 @@ export default async function Artists() {
 
   return (
     <div>
-      <h3>Artists to check out:</h3>
-      {artists.map((artist) => {
-        return (
-          <Link href={`/player/artist/${artist.id}`}>
-            <p>{artist.name}</p>
-          </Link>
-        );
-      })}
+      <h3 className="text-2xl">Artists</h3>
+      <ul className="flex ">
+        {artists.map((artist) => {
+          return (
+            <Link href={`/player/artist/${artist.id}`}>
+              <li className="m-4">{artist.name}</li>
+            </Link>
+          );
+        })}
+      </ul>
     </div>
   );
 }

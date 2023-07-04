@@ -9,6 +9,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateRows: {
+        layout: "10% 75% 15%"
+      },
+      gridTemplateColumns: {
+        layout: "30% 70%"
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -41,5 +47,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [require("daisyui")]
+  plugins: [require("daisyui"), require("@tailwindcss/typography")]
 };

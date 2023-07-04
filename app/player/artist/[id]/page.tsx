@@ -9,6 +9,11 @@ type Props = {
 };
 
 export default async function ArtistPage({ params }: Props) {
+  const artist = await prisma.artist.findUnique({
+    where: {
+      id: +params.id
+    }
+  });
   const songs = await prisma.song.findMany({
     where: {
       artistId: +params.id
@@ -16,7 +21,8 @@ export default async function ArtistPage({ params }: Props) {
   });
 
   return (
-    <div>
+    <div className="bg-primary p-5">
+      <p>{artist?.name}</p>
       <SongsTable songs={songs} />
     </div>
   );

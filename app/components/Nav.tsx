@@ -6,8 +6,8 @@ import type { User } from "../lib/store";
 export default async function Nav() {
   const user: User | JwtPayload | null = useMe();
   return (
-    <nav>
-      <p>🙏🏽 Welcome ! {user?.firstName}</p>
+    <nav className="col-span-2 flex justify-between items-center m-10">
+      <span>👋🏽 Hello, {user?.firstName}. </span>
       <LogoutButton />
     </nav>
   );

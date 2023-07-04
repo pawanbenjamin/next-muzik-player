@@ -5,7 +5,7 @@ import { addToPlaylist } from "../lib/serverActions";
 import type { Song } from "../lib/store";
 
 // Songs will be passed in, from a Server Component
-export function SongsTable({ songs }: { songs: Song[] }) {
+export function SongsTable({ songs }: { songs: Song[] | undefined }) {
   const [showPlaylists, setShowPlaylists] = useState<boolean>(false);
   const [playlists, setPlaylists] = useState<[]>([]);
 
@@ -35,13 +35,18 @@ export function SongsTable({ songs }: { songs: Song[] }) {
 
   return (
     <div className="">
-      <button onClick={handlePlay}>Play Button!!!</button>
+      <button className="text-xl mt-4 mb-4" onClick={handlePlay}>
+        ▶️
+      </button>
       {songs.map((song: any) => {
         return (
-          <div key={song.id}>
+          <div className="grid grid-cols-3 grid-rows-1" key={song.id}>
             <span>{song.name}</span>
-            <button onClick={() => setShowPlaylists(!showPlaylists)}>
-              add to playlist
+            <button
+              className="font-extrabold"
+              onClick={() => setShowPlaylists(!showPlaylists)}
+            >
+              +
             </button>
             {showPlaylists && (
               <ul>
