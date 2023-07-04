@@ -58,7 +58,7 @@ export default function Player() {
     }
   };
 
-  const onSeek = (e) => {
+  const onSeek = (e: any) => {
     setIsSeeking(true);
     setSeek(parseFloat(e.target.value));
     //@ts-ignore
