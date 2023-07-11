@@ -52,10 +52,10 @@ export const artistsData: {
         url: "https://dl.dropboxusercontent.com/s/92u8d427bz0b1t8/eternal-springtime.mp3?dl=0"
       },
       {
-        name: "Astronaut in a Submarine",
+        name: "Swan Song",
         duration: 239,
         artist: "FSM Team",
-        url: "https://dl.dropboxusercontent.com/s/9b43fr6epbgji4f/astronaut-in-a-submarine.mp3?dl=0"
+        url: "https://pb-muzik-player.s3.amazonaws.com/Swan+Song.mp3"
       }
     ]
   }
