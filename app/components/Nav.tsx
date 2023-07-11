@@ -6,7 +6,7 @@ import type { User } from "../lib/store";
 export default async function Nav() {
   const user: User | JwtPayload | null = useMe();
   return (
-    <nav className="w-full col-span-2 flex justify-end items-center">
+    <nav className="absolute right-4 w-full col-span-2 flex justify-end items-center">
       <div className="flex gap-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -20,7 +20,7 @@ export default async function Nav() {
             clipRule="evenodd"
           />
         </svg>
-        {user?.firstName}
+        {/* {user?.firstName} */}
       </div>
       {/* <LogoutButton /> */}
     </nav>

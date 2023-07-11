@@ -22,6 +22,12 @@ module.exports = {
       },
       gap: {
         "1%": "1%"
+      },
+      fontFamily: {
+        robotoc: "var(--font-roboto_c)",
+        robotos: "var(--font-roboto_s)",
+        primary: "var(--font-inter)",
+        mono: "var(--font-mono)"
       }
     }
   },
@@ -35,7 +41,7 @@ module.exports = {
 
           accent: "#115e59",
 
-          neutral: "#f5f5f4",
+          selected: "#f5f5f4",
 
           "base-100": "#2c2b2b",
 
@@ -45,7 +51,9 @@ module.exports = {
 
           warning: "#f9e72c",
 
-          error: "#f87171"
+          error: "#f87171",
+
+          normal: "#a7a7a7"
         }
       }
     ]
