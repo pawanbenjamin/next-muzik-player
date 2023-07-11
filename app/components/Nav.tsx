@@ -7,8 +7,9 @@ export default async function Nav() {
   const user: User | JwtPayload | null = useMe();
   return (
     <nav className="absolute right-4 w-full col-span-2 flex justify-end items-center">
-      <div className="flex gap-4">
+      <div className="flex gap-4 dropdown dropdown-end">
         <svg
+          tabIndex={0}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
@@ -20,7 +21,17 @@ export default async function Nav() {
             clipRule="evenodd"
           />
         </svg>
-        {/* {user?.firstName} */}
+        <ul
+          tabIndex={0}
+          className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-lg"
+        >
+          <li>
+            <span>Profile</span>
+          </li>
+          <li>
+            <LogoutButton />
+          </li>
+        </ul>
       </div>
       {/* <LogoutButton /> */}
     </nav>

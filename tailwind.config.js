@@ -27,6 +27,8 @@ module.exports = {
         robotoc: "var(--font-roboto_c)",
         robotos: "var(--font-roboto_s)",
         primary: "var(--font-inter)",
+        montserrat: "var(--font-montserrat)",
+        source_s_3: "var(--font-source-s-3)",
         mono: "var(--font-mono)"
       }
     }

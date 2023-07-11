@@ -22,13 +22,13 @@ export function LogoutButton() {
   const router = useRouter();
   return (
     <button
-      className="flex gap-2"
+      className=""
       onClick={async () => {
         await logOut();
         router.push("/");
       }}
     >
-      sign out{" "}
+      <span>Sign Out</span>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"

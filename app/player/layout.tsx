@@ -13,7 +13,7 @@ export default function DashboardLayout({ children }: Props) {
     <div className="grid grid-cols-layout grid-rows-layout h-screen p-4 gap-1%">
       <EZStoreProvider>
         <Sidebar />
-        <div className="relative bg-secondary rounded-lg p-4">
+        <div className="relative bg-secondary rounded-lg p-4 overflow-auto">
           <Nav />
           {children}
         </div>

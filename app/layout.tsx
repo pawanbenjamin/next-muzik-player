@@ -3,7 +3,9 @@ import {
   Roboto_Condensed,
   Inter,
   Ubuntu_Mono,
-  Roboto_Slab
+  Roboto_Slab,
+  Montserrat,
+  Source_Sans_3
 } from "next/font/google";
 
 export const metadata = {
@@ -34,6 +36,18 @@ const inter = Inter({
   variable: "--font-inter"
 });
 
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--font-montserrat"
+});
+
+const source_s_3 = Source_Sans_3({
+  subsets: ["latin"],
+  weight: ["300", "400", "700"],
+  variable: "--font-source_s_3"
+});
+
 export default function RootLayout({
   children
 }: {
@@ -42,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-primary ${inter.variable} ${roboto_c.variable} ${ubuntu_m.variable} ${roboto_s.variable} font-robotos text-normal`}
+        className={`bg-primary ${inter.variable} ${roboto_c.variable} ${ubuntu_m.variable} ${roboto_s.variable} ${montserrat.variable} ${source_s_3.variable} text-normal font-montserrat`}
       >
         {children}
       </body>

@@ -57,25 +57,46 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
         return (
           <div className="grid grid-cols-3 grid-rows-1" key={song.id}>
             <span>{song.name}</span>
-            <div className="flex justify-end">
-              <details className="dropdown">
-                <summary>+</summary>
-                <ul className="dropdown-content bg-neutral z-10 overflow-auto h-36">
-                  {playlists.map((playlist: any) => {
-                    return (
-                      <li
-                        onClick={() => {
-                          addToPlaylist(playlist.id, song.id);
-                          alert("added");
-                        }}
-                        key={playlist.id}
-                      >
-                        <span>playlist {playlist.id}</span>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </details>
+
+            <div
+              onClick={() => setSelectedSongId(song.id)}
+              className="flex justify-end dropdown dropdown-end"
+            >
+              <label tabIndex={0}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M12 4.5v15m7.5-7.5h-15"
+                  />
+                </svg>
+              </label>
+              <ul
+                tabIndex={0}
+                className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-lg"
+              >
+                <h2>Add to Playlist: </h2>
+                {playlists.map((playlist: any) => {
+                  return (
+                    <li
+                      onClick={() => {
+                        addToPlaylist(playlist.id, selectedSongId as number);
+                        alert("added");
+                      }}
+                      key={playlist.id}
+                    >
+                      <span>{playlist.name}</span>
+                    </li>
+                  );
+                })}
+              </ul>
             </div>
 
             <span className="flex justify-end">{song.duration}</span>
