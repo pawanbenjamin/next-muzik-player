@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default async function Home() {
   return (
-    <main className="font-mono flex flex-col justify-center items-center h-screen">
+    <main className="flex flex-col justify-center items-center h-screen">
       <section className="flex flex-col items-center text-lg p-20">
         <h1 className="font-bold text-7xl">
           🎵 welcome to pb's

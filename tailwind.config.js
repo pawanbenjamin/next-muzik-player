@@ -13,7 +13,7 @@ module.exports = {
         layout: "10% 75% 15%"
       },
       gridTemplateColumns: {
-        layout: "30% 70%"
+        layout: "25% 75%"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -26,23 +26,23 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#00485b",
+          primary: "#000000",
 
-          secondary: "#186dbc",
+          secondary: "#151515",
 
-          accent: "#e253d4",
+          accent: "#115e59",
 
-          neutral: "#2b242e",
+          neutral: "#f5f5f4",
 
-          "base-100": "#302d48",
+          "base-100": "#2c2b2b",
 
-          info: "#5ca8cc",
+          info: "#fbc86f",
 
-          success: "#5ae7bd",
+          success: "#34d399",
 
-          warning: "#b36c0f",
+          warning: "#f9e72c",
 
-          error: "#f06656"
+          error: "#f87171"
         }
       }
     ]

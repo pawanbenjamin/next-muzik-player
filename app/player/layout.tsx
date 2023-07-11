@@ -10,7 +10,7 @@ type Props = {
 
 export default function DashboardLayout({ children }: Props) {
   return (
-    <div className="font-mono grid grid-cols-layout grid-rows-layout h-screen ml-4 mr-4">
+    <div className="grid grid-cols-layout grid-rows-layout h-screen ml-4 mr-4">
       <EZStoreProvider>
         <Nav />
         <Sidebar />
