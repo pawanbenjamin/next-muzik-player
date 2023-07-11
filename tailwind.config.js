@@ -10,15 +10,18 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateRows: {
-        layout: "10% 75% 15%"
+        layout: "83% 13%"
       },
       gridTemplateColumns: {
-        layout: "25% 75%"
+        layout: "23% 76%"
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))"
+      },
+      gap: {
+        "1%": "1%"
       }
     }
   },

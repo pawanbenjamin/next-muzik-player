@@ -21,7 +21,7 @@ export default async function ArtistPage({ params }: Props) {
   });
 
   return (
-    <div className="bg-primary p-5">
+    <div>
       <p>{artist?.name}</p>
       <SongsTable songs={songs} />
     </div>

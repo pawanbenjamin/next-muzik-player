@@ -18,7 +18,10 @@ export default async function Playlist({ params }: Props) {
   });
 
   return (
-    <div className="bg-primary p-5">
+    <div className="">
+      <div>
+        <h1>{playlist?.name}</h1>
+      </div>
       <ul>
         <SongsTable songs={playlist?.songs} />
       </ul>

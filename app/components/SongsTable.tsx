@@ -39,7 +39,7 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
 
   return (
     <div className="">
-      <button className="text-xl mt-4 mb-4" onClick={handlePlay}>
+      <button className="" onClick={handlePlay}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
@@ -60,7 +60,7 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
             <div className="flex justify-end">
               <details className="dropdown">
                 <summary>+</summary>
-                <ul className="dropdown-content bg-neutral z-10 p-5 w-max overflow-auto h-36">
+                <ul className="dropdown-content bg-neutral z-10 overflow-auto h-36">
                   {playlists.map((playlist: any) => {
                     return (
                       <li

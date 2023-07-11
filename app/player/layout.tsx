@@ -10,11 +10,14 @@ type Props = {
 
 export default function DashboardLayout({ children }: Props) {
   return (
-    <div className="grid grid-cols-layout grid-rows-layout h-screen ml-4 mr-4">
+    <div className="grid grid-cols-layout grid-rows-layout h-screen p-4 gap-1%">
       <EZStoreProvider>
-        <Nav />
         <Sidebar />
-        {children}
+        <div className="bg-secondary rounded-lg p-4">
+          {/* <Nav /> */}
+          {children}
+        </div>
+
         <Player />
       </EZStoreProvider>
     </div>

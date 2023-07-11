@@ -6,7 +6,7 @@ import type { User } from "../lib/store";
 export default async function Nav() {
   const user: User | JwtPayload | null = useMe();
   return (
-    <nav className="col-span-2 flex justify-between items-center m-4">
+    <nav className="w-full col-span-2 flex justify-end items-center">
       <div className="flex gap-4">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -22,7 +22,7 @@ export default async function Nav() {
         </svg>
         {user?.firstName}
       </div>
-      <LogoutButton />
+      {/* <LogoutButton /> */}
     </nav>
   );
 }
