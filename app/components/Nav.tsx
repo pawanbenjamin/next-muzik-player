@@ -13,7 +13,7 @@ export default async function Nav() {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-6 h-6 hover:fill-white"
+          className="w-6 h-6 hover:fill-white transition-all duration-300"
         >
           <path
             fillRule="evenodd"

@@ -55,7 +55,9 @@ module.exports = {
 
           error: "#f87171",
 
-          normal: "#a7a7a7"
+          normal: "#a7a7a7",
+
+          hover: "#CFCFCF"
         }
       }
     ]

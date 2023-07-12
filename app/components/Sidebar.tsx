@@ -37,10 +37,10 @@ export default async function Sidebar() {
   let playlists = await fetchPlaylists();
 
   return (
-    <div className="flex flex-col gap-2 items-start">
+    <div className="flex flex-col gap-2 items-start ">
       <aside className="p-4 bg-secondary w-full rounded-lg">
         <ul className="">
-          <li className="hover:text-white">
+          <li className="hover:text-white transition-all duration-300">
             <Link className="flex items-center" href={"/player/profile"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export default async function Sidebar() {
               <span>home</span>
             </Link>
           </li>
-          <li className="hover:text-white">
+          <li className="hover:text-white transition-all duration-300">
             <Link className="flex items-center" href={"/player/profile"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ export default async function Sidebar() {
               <span>library</span>
             </div>
             <form action={createPlaylist}>
-              <button className="hover:text-white">
+              <button className="hover:text-white transition-all duration-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -108,7 +108,7 @@ export default async function Sidebar() {
         <ul className="">
           {playlists?.map((playlist: any) => {
             return (
-              <li className="hover:text-white">
+              <li className="hover:text-white transition-all duration-300">
                 <Link
                   className="flex items-center"
                   key={playlist.id}
