@@ -40,8 +40,8 @@ export default async function Sidebar() {
     <div className="flex flex-col gap-2 items-start">
       <aside className="p-4 bg-secondary w-full rounded-lg">
         <ul className="">
-          <li className="">
-            <Link className="flex" href={"/player/profile"}>
+          <li className="hover:text-white">
+            <Link className="flex items-center" href={"/player/profile"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -54,8 +54,8 @@ export default async function Sidebar() {
               <span>home</span>
             </Link>
           </li>
-          <li className="">
-            <Link className="flex" href={"/player/profile"}>
+          <li className="hover:text-white">
+            <Link className="flex items-center" href={"/player/profile"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -75,8 +75,8 @@ export default async function Sidebar() {
       </aside>
       <aside className="p-4 bg-secondary overflow-auto w-full h-full rounded-lg">
         <ul className="">
-          <li className="flex justify-between">
-            <div className="flex">
+          <li className="flex justify-between items-baseline">
+            <div className="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -88,7 +88,7 @@ export default async function Sidebar() {
               <span>library</span>
             </div>
             <form action={createPlaylist}>
-              <button className="">
+              <button className="hover:text-white">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -108,9 +108,9 @@ export default async function Sidebar() {
         <ul className="">
           {playlists?.map((playlist: any) => {
             return (
-              <li className="">
+              <li className="hover:text-white">
                 <Link
-                  className="flex"
+                  className="flex items-center"
                   key={playlist.id}
                   href={`/player/playlist/${playlist.id}`}
                 >
@@ -128,7 +128,7 @@ export default async function Sidebar() {
                       d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z"
                     />
                   </svg>
-                  list {playlist.id}
+                  <span>list {playlist.id}</span>
                 </Link>
               </li>
             );

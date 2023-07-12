@@ -6,14 +6,14 @@ import type { User } from "../lib/store";
 export default async function Nav() {
   const user: User | JwtPayload | null = useMe();
   return (
-    <nav className="absolute right-4 w-full col-span-2 flex justify-end items-center">
+    <nav className="absolute right-4 top-4 w-full col-span-2 flex justify-end items-center">
       <div className="flex gap-4 dropdown dropdown-end">
         <svg
           tabIndex={0}
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-6 h-6"
+          className="w-6 h-6 hover:fill-white"
         >
           <path
             fillRule="evenodd"

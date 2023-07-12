@@ -38,13 +38,13 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
   }
 
   return (
-    <div className="">
+    <div className="bg-slate-500 h-full p-2">
       <button className="" onClick={handlePlay}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-6 h-6"
+          className="w-16 h-16 hover:fill-white"
         >
           <path
             fillRule="evenodd"
@@ -55,7 +55,10 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
       </button>
       {songs?.map((song: Song) => {
         return (
-          <div className="grid grid-cols-3 grid-rows-1" key={song.id}>
+          <div
+            className="grid grid-cols-3 grid-rows-1 hover:text-white"
+            key={song.id}
+          >
             <span>{song.name}</span>
 
             <div
@@ -80,9 +83,9 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
               </label>
               <ul
                 tabIndex={0}
-                className="dropdown-content z-[1] menu p-2 shadow bg-primary rounded-lg"
+                className="dropdown-content z-[1] menu p-4 shadow bg-primary rounded-lg"
               >
-                <h2>Add to Playlist: </h2>
+                <h2 className="pb-2">Add to Playlist: </h2>
                 {playlists.map((playlist: any) => {
                   return (
                     <li

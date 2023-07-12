@@ -21,8 +21,16 @@ export default async function ArtistPage({ params }: Props) {
   });
 
   return (
-    <div>
-      <p>{artist?.name}</p>
+    <div className="flex flex-col h-full">
+      <div className="flex flex-col justify-end pl-2 pb-8 bg-accent h-80">
+        <h1 className="text-3xl font-bold">{artist?.name}</h1>
+        <p className="text-xs w-1/2">
+          Lorem ipsum dolor sit amet <br />
+          consectetur adipisicing elit. Cumque
+          <br />
+        </p>
+      </div>
+
       <SongsTable songs={songs} />
     </div>
   );

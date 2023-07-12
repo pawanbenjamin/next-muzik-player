@@ -56,7 +56,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-primary ${inter.variable} ${roboto_c.variable} ${ubuntu_m.variable} ${roboto_s.variable} ${montserrat.variable} ${source_s_3.variable} text-normal font-montserrat`}
+        className={`bg-primary ${montserrat.variable} ${source_s_3.variable} font-montserrat text-neutral`}
       >
         {children}
       </body>
