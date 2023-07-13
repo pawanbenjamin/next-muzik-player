@@ -4,28 +4,21 @@ import useStore from "../lib/hooks/useStore";
 import { addToPlaylist } from "../lib/serverActions";
 import { Song } from "../lib/store";
 
+interface Playlist {
+  id: number;
+  name: string;
+  userId: number;
+}
+
 // Songs will be passed in, from a Server Component
-export function SongsTable({ songs }: { songs: Song[] | undefined }) {
-  const [showPlaylists, setShowPlaylists] = useState<boolean>(false);
-  const [playlists, setPlaylists] = useState<[]>([]);
-
+export function SongsTable({
+  songs,
+  playlists
+}: {
+  songs: Song[] | undefined;
+  playlists: Playlist[];
+}) {
   const [selectedSongId, setSelectedSongId] = useState<number | null>(null);
-
-  // To fetch user playlists to possible add song to
-  useEffect(() => {
-    async function fetchPlaylists() {
-      const res = await fetch("/api/playlists");
-      if (!res.ok) {
-        throw {
-          message: "error fetching playlists"
-        };
-      } else {
-        const { playlists } = await res.json();
-        setPlaylists(playlists);
-      }
-    }
-    fetchPlaylists();
-  }, []);
 
   const { activeSongs, activeSong, changeActiveSongs, changeActiveSong } =
     useStore();
@@ -36,6 +29,8 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
       changeActiveSong(songs[0]);
     }
   }
+
+  console.log("Playlists: ", playlists);
 
   return (
     <div className="h-full p-2">
@@ -95,7 +90,7 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
                       }}
                       key={playlist.id}
                     >
-                      <span>{playlist.name}</span>
+                      <span>Playlist {playlist.id}</span>
                     </li>
                   );
                 })}
@@ -106,26 +101,6 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
           </div>
         );
       })}
-
-      {/* {showPlaylists && (
-        <details>
-          <ul className="dropdown-content">
-            {playlists.map((playlist: any) => {
-              return (
-                <li
-                  onClick={() => {
-                    addToPlaylist(playlist.id, selectedSongId as number);
-                    alert("added");
-                  }}
-                  key={playlist.id}
-                >
-                  {playlist.name}
-                </li>
-              );
-            })}
-          </ul>
-        </details>
-      )} */}
     </div>
   );
 }
