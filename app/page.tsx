@@ -1,6 +1,12 @@
 import Link from "next/link";
+import useMe from "./lib/hooks/useMe";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
+  const user = useMe();
+  if (user) {
+    redirect("/player/profile");
+  }
   return (
     <main className="flex flex-col justify-center items-center h-screen">
       <section className="flex flex-col items-center text-lg p-20">

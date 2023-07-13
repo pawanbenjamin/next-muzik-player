@@ -5,16 +5,29 @@ import { parseUserToken } from "./app/lib/tokenHelpers";
 
 // This function can be marked `async` if using `await` inside
 export async function middleware(request: NextRequest) {
-  //   const nextCookie = cookies().get("next-muzik-player");
-  //   if (nextCookie) {
-  //     const user = parseUserToken(nextCookie?.value);
-  //     return NextResponse.redirect(new URL("/dashboard/profile", request.url));
-  //   } else {
-  //     return null;
+  // console.log("NEXT REQUEST-------------------->>>>", request.cookies);
+  // const cookies = request.cookies.getAll();
+  // console.log("COOKIE", cookies);
+  // for (const cookie of cookies) {
+  //   if (cookie.name === "next-muzik-player") {
+  //     const user = parseUserToken(cookie.value);
+  //     if (user) {
+  //       return NextResponse.redirect(new URL("/player/profile", request.url));
+  //     }
   //   }
+  // }
+  // const nextCookie = cookies().get("next-muzik-player");
+  // if (nextCookie) {
+  //   const user = parseUserToken(nextCookie?.value);
+  //   return (
+  //     user && NextResponse.redirect(new URL("/player/profile", request.url))
+  //   );
+  // } else {
+  //   return null;
+  // }
 }
 
 // See "Matching Paths" below to learn more
 export const config = {
-  matcher: "/((?!api|_next/static|_next/image|favicon.ico).*)"
+  matcher: "/"
 };
