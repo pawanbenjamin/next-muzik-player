@@ -26,7 +26,7 @@ async function createPlaylist() {
   const user: User | JwtPayload | null = useMe();
   const playlist = await prisma.playlist.create({
     data: {
-      name: `Playlist ${Math.random().toString()}`,
+      name: `Playlist ${Math.random().toString().slice(7)}`,
       userId: user?.id
     }
   });
@@ -55,7 +55,7 @@ export default async function Sidebar() {
             </Link>
           </li>
           <li className="hover:text-white transition-all duration-300">
-            <Link className="flex items-center" href={"/player/profile"}>
+            <Link className="flex items-center" href={"/player/search"}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

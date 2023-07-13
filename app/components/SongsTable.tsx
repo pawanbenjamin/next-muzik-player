@@ -38,7 +38,7 @@ export function SongsTable({ songs }: { songs: Song[] | undefined }) {
   }
 
   return (
-    <div className="bg-slate-500 h-full p-2">
+    <div className="h-full p-2">
       <button className="" onClick={handlePlay}>
         <svg
           xmlns="http://www.w3.org/2000/svg"

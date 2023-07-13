@@ -18,7 +18,7 @@ export default async function Artists() {
           return (
             <Link href={`/player/artist/${artist.id}`}>
               <li
-                className="m-2  shadow-2xl rounded-lg p-2 w-44 
+                className="m-2 shadow-2xl rounded-lg p-2 w-48
                "
               >
                 <figure>

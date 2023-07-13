@@ -18,9 +18,9 @@ export default async function Playlist({ params }: Props) {
   });
 
   return (
-    <div className="">
-      <div>
-        <h1>{playlist?.name}</h1>
+    <div className="flex flex-col h-full">
+      <div className="flex flex-col justify-end pl-2 pb-8 h-80">
+        <h1>Playlist {playlist?.id}</h1>
       </div>
       <ul>
         <SongsTable songs={playlist?.songs} />
