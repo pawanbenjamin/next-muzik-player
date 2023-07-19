@@ -9,6 +9,5 @@ export default function useMe(): UserToken | null {
   }
 
   const user = parseUserToken(nextCookie?.value);
-  console.log("TYPE OF USER: ", typeof user);
   return user;
 }
